@@ -1,5 +1,4 @@
 const mongoose = require("mongoose")
-// const { findByIdAndUpdate } = require("../models/recipe")
 const Trees = require("../models/trees")
 const addTree = async (req, res) => {
     try {

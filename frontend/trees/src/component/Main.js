@@ -18,6 +18,9 @@ const InfoContainer=styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
+margin:0 auto;
+width:50%;
+padding-top:10em;
 `
 const Head=styled.h2`
 color:white;`

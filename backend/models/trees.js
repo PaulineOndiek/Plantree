@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const treeSchema = new mongoose.Schema({
     name: { type: String, required: true },
+    phone:{type:String},
     authority: { type: String, required: true },
     ownership: { type: String, required: true },
     image: { type: String, required: true },

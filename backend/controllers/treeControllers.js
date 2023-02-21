@@ -4,6 +4,7 @@ const addTree = async (req, res) => {
     try {
         const newTree = new Trees({
             name: req.body.name,
+            phone:req.body.phone,
             authority: req.body.authority,
             ownership: req.body.ownership,
             image: req.body.image,

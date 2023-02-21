@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup'
 import Login from './pages/Login';
 import About from './pages/About';
+import Forms from './pages/Forms';
 
 
 const App=()=> {
@@ -14,6 +15,8 @@ const App=()=> {
       <Route path="/" element={<Home/>}></Route>
      <Route path="/signup" element={<Signup/>}></Route>
      <Route path="/login" element={<Login/>}></Route>
+     <Route path="/about" element={<About/>}></Route>
+     <Route path="/forms" element={<Forms/>}></Route>
       </Routes>
    
     </BrowserRouter>

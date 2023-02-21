@@ -17,7 +17,7 @@ const Button=styled.button`
 padding:1em 2em; 
 border:none;
 width:20%;
-background:green;
+background:#1A4D2E;
 color:white;
 
 `
@@ -25,7 +25,7 @@ color:white;
 const Input=styled.input`
 outline:none;
 border:none;
-border-bottom:1px solid green;
+border-bottom:1px solid #1A4D2E;
 width:60%;`
 
 const Signup=()=>{

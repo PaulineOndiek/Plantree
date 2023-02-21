@@ -1,6 +1,9 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-const NavContainer=styled.div``
+const NavContainer=styled.div`
+background:#1A4D2E;
+padding:1.2em;
+color:white;`
 const Container=styled.div`
 margin:0 auto;
 width:80%;`
@@ -31,6 +34,7 @@ const Nav=()=>{
                     <NavList><Link to="/About">About</Link></NavList>
                     <NavList><Link to="/Signup">Signup</Link></NavList>
                     <NavList><Link to="/Login">Login</Link></NavList>
+                    <NavList><Link to="/Forms">Form</Link></NavList>
                     <NavList><Link to="/Donate">Donate</Link></NavList></NavRight>
 
                 </NavUl>

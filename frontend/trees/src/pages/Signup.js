@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Nav from "../component/Nav"
+import { useEffect, useState } from "react"
 const SignContainer=styled.div`
 `
 const Container=styled.div`
@@ -29,6 +30,45 @@ border-bottom:1px solid #1A4D2E;
 width:60%;`
 
 const Signup=()=>{
+    
+const [user,setUser]=useState({
+    name:"",
+    email:"",
+    password:"",
+    confirm:""
+})
+const [empty,setEmpty]=useState([])
+const [error,setError]=useState("")
+
+const handleUsers=()=>{
+    if(user.name===""||user.email===""||user.password===""||user.confirm===""){
+        return({error:"Please Input all the Required Fields"})
+    }
+
+    if (user.name===""){
+        empty.push("name")
+    }
+    if(user.email===""){
+        empty.push("email")
+    }if(user.password===""){
+        empty.push("password")
+    }
+    if(user.confirm===""){
+        empty.push("confirm")
+    }
+
+}
+
+useEffect(()=>{
+    const fetchUsers=async()=>{
+        const getUser=await fetch ("http://localhost:8001/api/users")
+        const fetchJson=await getUser.json() 
+
+    }
+    
+},
+[])
+
     return(
         <SignContainer>
             <Nav/>
@@ -36,10 +76,11 @@ const Signup=()=>{
                 <Para>Make Our Planet Greener!!</Para>
                 <Head>Create Your Account</Head>
                 <Inputs>
-                <Input placeholder="Name"/>
-                <Input placeholder="Email"/>
-                <Input placeholder="Password"/>
-                <Input placeholder="Confirm Password"/>
+                <Para>{error}</Para>
+                <Input  onChange={(e)=>setUser(prev=>({...prev,name:e.target.value}))} placeholder="Name"/>
+                <Input onChange={(e)=>setUser(prev=>({...prev,email:e.target.value}))} placeholder="Email"/>
+                <Input onChange={(e)=>setUser(prev=>({...prev,password:e.target.value}))} placeholder="Password"/>
+                <Input onChange={(e)=>setUser(prev=>({...prev,confirm:e.target.value}))} placeholder="Confirm Password"/>
                
                 <Button>Register</Button>
                 <Para>Have Account Already??</Para>
